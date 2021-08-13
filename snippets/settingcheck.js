@@ -68,7 +68,7 @@ module.exports = async function settingread(arg, from, sender, groupname, client
 
     return (data = {
 
-      from: from,
+      from,
       arg: from.endsWith("@g.us") ?
         data1.rows[0].useprefix ?
         arg
@@ -87,9 +87,9 @@ module.exports = async function settingread(arg, from, sender, groupname, client
       isnumberblockedingroup: from.endsWith("@g.us") ? data1.rows[0].banned_users.includes(number) ? 1 : 0 : 0,
       groupdata: from.endsWith("@g.us") ? data1.rows[0] : 0,
       botdata: botdata.rows[0],
-      sender: sender,
-      stanzaId: stanzaId,
-      isMedia: isMedia
+      sender,
+      stanzaId,
+      isMedia
     })
 
   } catch (error) {
